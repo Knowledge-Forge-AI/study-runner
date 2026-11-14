@@ -1,0 +1,62 @@
+{
+  "schema": "study-runner-public-host-runtime-inputs.v7",
+  "status": "SOURCE_BOUND_CANDIDATE_NOT_RELEASED",
+  "sourceRevision": {
+    "contentBinding": "source hashes below; private source identity retained outside this public input",
+    "candidateLabel": "synchronous-classic source candidate"
+  },
+  "sourceReview": {
+    "verdict": "SOURCE_CLOSURE_ACCEPTED",
+    "hostQualification": "NOT_PERFORMED",
+    "responseHeaderQualification": "NOT_PERFORMED",
+    "browserQualification": "NOT_PERFORMED"
+  },
+  "toolchain": {
+    "node": "22.23.4",
+    "typescript": "7.0.2",
+    "install": false,
+    "network": false
+  },
+  "source": {
+    "study-runtime-protocol.ts": "d20f7f404170ce225a0d88b029f4b660cd586318ecff1557ddd66d07691cd9e0",
+    "study-runtime-frame.ts": "79f56e44c744116b13f20ca890fcf68f211bab11da17662558626c8a97a5c723",
+    "study-runtime-controller.ts": "cc72145a75fc7b911cad978288054caeda5e7bbabb5ef33af81f980318ec4d17",
+    "separate-origin-runtime-host.ts": "8fae25d3496e10b85ca1ed05317a3799b4898df64712137710568fff35a9d3b8",
+    "public-runner-contract.ts": "79d93ccb27fd27fd020fa31de48c5435d6c656a97420d360fb32242e3c3c0b7f"
+  },
+  "emitter": {
+    "frameTemplate": {
+      "bytes": 464,
+      "sha256": "bfd67b5fc10c454f6616609488358833b8f44e198e3619ed52f935e0ebc8ddb1"
+    },
+    "coreFixture": {
+      "bytes": 21349,
+      "sha256": "d490e5ba4fbc3173c21435a68a6e2991a1f0a86c0faa589c412a72389011d08c"
+    }
+  },
+  "admission": {
+    "sourceSha256": "172fba63fe285858f1447ead33836d4fb0340b214e299b6d108c50d806ca839f"
+  },
+  "coreAssets": {
+    "/pyodide/pyodide.mjs": { "bytes": 17758, "sha256": "1bb8cc14f9405aaa7cd4e00c12edd0a8539de9cc026618d6ee5a9663f367dc70" },
+    "/pyodide/pyodide.asm.mjs": { "bytes": 1250259, "sha256": "22514b8be6980e28a02c8b1d6387ce8dfe666fc4edf8d547cff5dce29ff4d972" },
+    "/pyodide/pyodide.asm.wasm": { "bytes": 9597892, "sha256": "e14d49ceca9b4a0e274ea918f3a898de2d3880b6e5573a6cfe1a2267ecc70329" },
+    "/pyodide/python_stdlib.zip": { "bytes": 2545550, "sha256": "2bd3394a145bfbbe5bbc9d9d6ab9136abbb986c6fef6c142b3a2962227aa5c28" },
+    "/pyodide/pyodide-lock.json": { "bytes": 119077, "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010" }
+  },
+  "noticeReview": {
+    "verdict": "ACCEPT-STUDY-RUNNER-CORE-NOTICES",
+    "scope": "notice/source unit only; not release, legal, hosted, or browser qualification",
+    "noticeSha256": "6b0b7842d6a7c6ed36d7d9823eaf78631a16ea35a66d58740af2f2995c284f6e",
+    "sourceAvailabilitySha256": "7e59642d6df927a4925d4d762a2296152668eb8e0aad16d4fbb208849f15e80b",
+    "licenseBodyCount": 27
+  },
+  "policy": {
+    "noCdn": true,
+    "fetchCredentials": "omit",
+    "frameAncestors": "not claimed; host response-header qualification remains required",
+    "parentBinding": "fixed approved HTTPS parents; loopback QA only when runner is HTTP loopback",
+    "httpsRunnerAdmission": "deliberately host-agnostic across HTTPS origins; core and parent binding remain the enforcement boundary"
+  },
+  "workflowSha256": "8db71838b24fe7a61ee67c36da4bd2650784ef67fcc1dc7712c8f6b65bf87ecd"
+}

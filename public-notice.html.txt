@@ -1,0 +1,6 @@
+Study Runner provides a separate-origin browser runtime for interactive lessons.
+The runtime supports JavaScript and Python through the bundled Pyodide 314.0.8
+runtime (Python 3.14.2). Third-party notices and source-availability records are
+provided with the runtime. Study Runner-authored source and tooling are licensed
+under the terms in LICENSE and NOTICE; separately maintained material retains its
+upstream terms.

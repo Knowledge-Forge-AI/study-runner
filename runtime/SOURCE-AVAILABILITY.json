@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 1,
+  "artifactScope": "Pyodide 314.0.8 five-file browser subset",
+  "noticeFile": "THIRD_PARTY_NOTICES.txt",
+  "licenseDirectory": "LICENSES/",
+  "release": {
+    "project": "pyodide",
+    "version": "314.0.8",
+    "commit": "f37a18559ae11c5f371beb1c9462a13a663fc461",
+    "releaseUrl": "https://github.com/pyodide/pyodide/releases/tag/314.0.8",
+    "coreArchive": {
+      "url": "https://github.com/pyodide/pyodide/releases/download/314.0.8/pyodide-core-314.0.8.tar.bz2",
+      "bytes": 6759200,
+      "sha256": "ff3e5f9d9bc8e98ff30b99515535fc24d375994f47a978c61975d653e162ca37",
+      "digestBasis": "official release asset and retained exact archive receipt"
+    }
+  },
+  "runtimeMembers": [
+    {
+      "member": "pyodide/pyodide.mjs",
+      "bytes": 17758,
+      "sha256": "1bb8cc14f9405aaa7cd4e00c12edd0a8539de9cc026618d6ee5a9663f367dc70",
+      "role": "browser ESM loader"
+    },
+    {
+      "member": "pyodide/pyodide.asm.mjs",
+      "bytes": 1250259,
+      "sha256": "22514b8be6980e28a02c8b1d6387ce8dfe666fc4edf8d547cff5dce29ff4d972",
+      "role": "Emscripten module glue"
+    },
+    {
+      "member": "pyodide/pyodide.asm.wasm",
+      "bytes": 9597892,
+      "sha256": "e14d49ceca9b4a0e274ea918f3a898de2d3880b6e5573a6cfe1a2267ecc70329",
+      "role": "Wasm runtime"
+    },
+    {
+      "member": "pyodide/python_stdlib.zip",
+      "bytes": 2545550,
+      "sha256": "2bd3394a145bfbbe5bbc9d9d6ab9136abbb986c6fef6c142b3a2962227aa5c28",
+      "role": "embedded Python standard library"
+    },
+    {
+      "member": "pyodide/pyodide-lock.json",
+      "bytes": 119077,
+      "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+      "role": "package metadata only; payloads are not in this closure"
+    }
+  ],
+  "licenseTextsIncluded": [
+    {
+      "path": "LICENSES/pyodide-LICENSE.txt",
+      "component": "Pyodide",
+      "license": "MPL-2.0",
+      "sourceUrl": "https://raw.githubusercontent.com/pyodide/pyodide/f37a18559ae11c5f371beb1c9462a13a663fc461/LICENSE",
+      "bytes": 16725,
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "textStatus": "exact retained official text"
+    },
+    {
+      "path": "LICENSES/cpython-LICENSE.txt",
+      "component": "CPython",
+      "license": "PSF License Version 2; incorporated-software pointer",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/LICENSE",
+      "bytes": 13804,
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+      "textStatus": "exact retained official text"
+    },
+    {
+      "path": "LICENSES/cpython-README.rst",
+      "component": "CPython",
+      "license": "historical attribution and build context",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/README.rst",
+      "bytes": 8895,
+      "sha256": "24baeaa7cd19412a0cbcc598ba04ad072827388e46140a7d0537bdb218bed880",
+      "textStatus": "exact retained official text"
+    },
+    {
+      "path": "LICENSES/cpython-Doc-license.rst",
+      "component": "CPython incorporated software",
+      "license": "CPython upstream incorporated-software acknowledgements and license texts",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Doc/license.rst",
+      "bytes": 57595,
+      "sha256": "c695d550b135e53e38807e76496d1db17d22c40e461d1f3f354c86188d3305dd",
+      "textStatus": "exact raw official text; upstream section identifies its incorporated-software list as incomplete"
+    },
+    {
+      "path": "LICENSES/cpython-ctypes-README.ctypes.txt",
+      "component": "CPython bundled py2app/macholib notice",
+      "license": "MIT or PSF terms as stated by the bundled notice",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Lib/ctypes/macholib/README.ctypes",
+      "bytes": 296,
+      "sha256": "dc29d1da83b6a0a09a41647e4111eee878ed079c2d6b54a98fd6d8b88dd581f2",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/pyodide-stackframe-LICENSE.txt",
+      "component": "Pyodide vendored stackframe/error-stack-parser",
+      "license": "MIT",
+      "sourceUrl": "https://raw.githubusercontent.com/pyodide/pyodide/f37a18559ae11c5f371beb1c9462a13a663fc461/src/js/vendor/stackframe/LICENSE",
+      "bytes": 1080,
+      "sha256": "899da9d991cb211a3642b84e82a9ae0b4b4e44546fd207e34d7d4ec2eb40f420",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/ws-LICENSE.txt",
+      "component": "ws Node-only dependency",
+      "license": "MIT",
+      "sourceUrl": "https://raw.githubusercontent.com/websockets/ws/8.18.3/LICENSE",
+      "bytes": 1183,
+      "sha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef",
+      "textStatus": "exact raw official text for the lock-resolved Node-only package"
+    },
+    {
+      "path": "LICENSES/bzip2-LICENSE.txt",
+      "component": "Emscripten bzip2 port",
+      "license": "bzip2/libbzip2 BSD-style terms",
+      "sourceUrl": "https://raw.githubusercontent.com/emscripten-ports/bzip2/1.0.6/LICENSE",
+      "bytes": 1901,
+      "sha256": "4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204",
+      "textStatus": "exact raw official text",
+      "sourceUrlKind": "version tag; tag-to-commit not retained"
+    },
+    {
+      "path": "LICENSES/zlib-LICENSE.txt",
+      "component": "Emscripten zlib port",
+      "license": "zlib license",
+      "sourceUrl": "https://raw.githubusercontent.com/madler/zlib/v1.3.1/LICENSE",
+      "bytes": 1002,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+      "textStatus": "exact raw official text",
+      "sourceUrlKind": "version tag; tag-to-commit not retained"
+    },
+    {
+      "path": "LICENSES/emscripten-LICENSE.txt",
+      "component": "Emscripten",
+      "license": "MIT and University of Illinois/NCSA",
+      "sourceUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/LICENSE",
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/emsdk-LICENSE.txt",
+      "component": "emsdk",
+      "license": "MIT",
+      "sourceUrl": "https://raw.githubusercontent.com/emscripten-core/emsdk/5.0.3/LICENSE",
+      "bytes": 1326,
+      "sha256": "99d9a9616fbde3f5ee22a71d8645799a8522d48526130c5ba6dc27ad15ce01f1",
+      "textStatus": "exact raw official text",
+      "sourceUrlKind": "version tag",
+      "resolvedCommit": "a620cf1d71c62dfdfbb0c01fe0a371e2af2dda6c"
+    },
+    {
+      "path": "LICENSES/llvm-LICENSE.TXT",
+      "component": "LLVM",
+      "license": "Apache-2.0 with LLVM exceptions",
+      "sourceUrl": "https://raw.githubusercontent.com/llvm/llvm-project/e5927fecf8a6ce89e1a4eac5b828e7d42676452a/LICENSE.TXT",
+      "bytes": 15141,
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/binaryen-LICENSE.txt",
+      "component": "Binaryen",
+      "license": "Apache-2.0",
+      "sourceUrl": "https://raw.githubusercontent.com/WebAssembly/binaryen/2eb472cd650b183ffe0f88b0365908d0aa669ea3/LICENSE",
+      "bytes": 11535,
+      "sha256": "64c0d02491e16eced74826440ecd2bcf7722d37fa586faf457b2494293afbffe",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/emscripten-musl-COPYRIGHT.txt",
+      "component": "Emscripten musl",
+      "license": "MIT with BSD-licensed TRE portion",
+      "sourceUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libc/musl/COPYRIGHT",
+      "bytes": 6204,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/libcxx-LICENSE.TXT",
+      "component": "Emscripten libc++",
+      "license": "LLVM libc++ terms",
+      "sourceUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libcxx/LICENSE.TXT",
+      "bytes": 16703,
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/libcxxabi-LICENSE.TXT",
+      "component": "Emscripten libc++abi",
+      "license": "LLVM libc++abi terms",
+      "sourceUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libcxxabi/LICENSE.TXT",
+      "bytes": 16706,
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/libunwind-LICENSE.TXT",
+      "component": "Emscripten libunwind",
+      "license": "LLVM libunwind terms",
+      "sourceUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libunwind/LICENSE.TXT",
+      "bytes": 16706,
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/hacl-LICENSE.txt",
+      "component": "HACL*",
+      "license": "Apache-2.0 upstream",
+      "sourceUrl": "https://raw.githubusercontent.com/hacl-star/hacl-star/8ba599b2f6c9701b3dc961db895b0856a2210f76/LICENSE",
+      "bytes": 11356,
+      "sha256": "c5accbbd8546e94c34aed24afe689a617627d18eed5a6c48277e48db57c23851",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/hacl-generated-source-header.txt",
+      "component": "HACL* generated source",
+      "license": "MIT file-level source header",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/_hacl/Hacl_HMAC.c",
+      "bytes": 1209,
+      "sha256": "c3f0fcd0a458caf768ac60c9b999c9b01dd9d25c98720be67f87fa96a0aa1c95",
+      "textStatus": "exact first 25 source lines containing the file-level notice",
+      "sourceFileBytes": 45492,
+      "sourceFileSha256": "5acf4f60e2a629ad44932d92cce8163a2a767df10a219e1d9d4a03349ffe26b8"
+    },
+    {
+      "path": "LICENSES/libmpdec-README.txt",
+      "component": "libmpdec",
+      "license": "source inventory and author context",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/_decimal/libmpdec/README.txt",
+      "bytes": 3642,
+      "sha256": "89926cd0fe6cfb33a2b5b7416c101e9b5d42b0d639d348e0871acf6ffc8258a3",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/libmpdec-source-header.txt",
+      "component": "libmpdec",
+      "license": "BSD-style file-level source header",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/_decimal/libmpdec/mpdecimal.c",
+      "bytes": 1361,
+      "sha256": "eb4d2509b268bf38286ce7e8f09d757f62d66d513ae15d486fc4c7df03c52704",
+      "textStatus": "exact first 28 source lines containing the file-level notice",
+      "sourceFileBytes": 247346,
+      "sourceFileSha256": "4f89b8095e408a18deff79cfb605299e615bae747898eb105d8936064f7fb626"
+    },
+    {
+      "path": "LICENSES/expat-COPYING.txt",
+      "component": "Expat",
+      "license": "MIT",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/expat/COPYING",
+      "bytes": 1144,
+      "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/libffi-LICENSE.txt",
+      "component": "libffi",
+      "license": "MIT",
+      "sourceUrl": "https://raw.githubusercontent.com/libffi/libffi/f08493d249d2067c8b3207ba46693dd858f95db3/LICENSE",
+      "bytes": 1132,
+      "sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/hiwire-LICENSE.txt",
+      "component": "Hiwire",
+      "license": "MPL-2.0",
+      "sourceUrl": "https://raw.githubusercontent.com/pyodide/hiwire/6a1e67280a15d929ebeceee54a6358c9c8d5f697/LICENSE",
+      "bytes": 16725,
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "textStatus": "exact raw official text"
+    },
+    {
+      "path": "LICENSES/xz-COPYING.txt",
+      "component": "XZ/liblzma",
+      "license": "public-domain liblzma statement",
+      "sourceUrl": "https://raw.githubusercontent.com/tukaani-project/xz/v5.2.2/COPYING",
+      "bytes": 2774,
+      "sha256": "c4f8e14fafe458d84808a4cd8b69f94673ebe2bf8fc992291629a69ac12218f8",
+      "textStatus": "exact raw official text",
+      "sourceUrlKind": "version tag",
+      "resolvedCommit": "9815cdf6987ef91a85493bfcfd1ce2aaf3b47a0a"
+    },
+    {
+      "path": "LICENSES/zstd-LICENSE.txt",
+      "component": "zstd",
+      "license": "BSD",
+      "sourceUrl": "https://raw.githubusercontent.com/python/cpython-source-deps/zstd-1.5.7/LICENSE",
+      "bytes": 1549,
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+      "textStatus": "exact raw official text",
+      "sourceUrlKind": "version tag",
+      "resolvedCommit": "eef946ae8cf1591c0e5cc5f43486210768647c2e"
+    },
+    {
+      "path": "LICENSES/sqlite-copyright.html.txt",
+      "component": "SQLite",
+      "license": "public domain for deliverable SQLite code/documentation",
+      "sourceUrl": "https://www.sqlite.org/copyright.html",
+      "bytes": 8351,
+      "sha256": "44ca9f793055c8e32fc65f65a4f5bcf813a33f5bdaaa084067dd617a4ed3cc70",
+      "textStatus": "exact raw official copyright page",
+      "sourceUrlKind": "unversioned live page snapshot",
+      "retrievedAtUtc": "2026-11-14T07:18:51Z",
+      "upstreamPageLastUpdatedObserved": "2026-01-12",
+      "bytesBoundBySha256": true
+    }
+  ],
+  "sourceReferences": [
+    {
+      "component": "CPython",
+      "revision": "df793163d5821791d4e7caf88885a2c11a107986",
+      "url": "https://github.com/python/cpython/tree/df793163d5821791d4e7caf88885a2c11a107986",
+      "availability": "immutable commit"
+    },
+    {
+      "component": "CPython incorporated-software notice source",
+      "revision": "df793163d5821791d4e7caf88885a2c11a107986",
+      "url": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Doc/license.rst",
+      "availability": "immutable commit; exact text retained"
+    },
+    {
+      "component": "Pyodide JavaScript source and vendored stackframe",
+      "revision": "f37a18559ae11c5f371beb1c9462a13a663fc461",
+      "url": "https://github.com/pyodide/pyodide/tree/f37a18559ae11c5f371beb1c9462a13a663fc461/src/js",
+      "availability": "immutable commit; package manifest/lock and vendor notice retained privately"
+    },
+    {
+      "component": "Emscripten bzip2 port",
+      "revision": "1.0.6",
+      "url": "https://github.com/emscripten-ports/bzip2/tree/1.0.6",
+      "availability": "version tag; tag-to-commit not retained; recipe-declared SHA-512 recorded"
+    },
+    {
+      "component": "Emscripten zlib port",
+      "revision": "v1.3.1",
+      "url": "https://github.com/madler/zlib/tree/v1.3.1",
+      "availability": "version tag; tag-to-commit not retained; recipe-declared SHA-512 recorded"
+    },
+    {
+      "component": "HACL*",
+      "revision": "8ba599b2f6c9701b3dc961db895b0856a2210f76",
+      "url": "https://github.com/hacl-star/hacl-star/tree/8ba599b2f6c9701b3dc961db895b0856a2210f76",
+      "availability": "immutable commit"
+    },
+    {
+      "component": "libffi",
+      "revision": "f08493d249d2067c8b3207ba46693dd858f95db3",
+      "url": "https://github.com/libffi/libffi/tree/f08493d249d2067c8b3207ba46693dd858f95db3",
+      "availability": "immutable commit"
+    },
+    {
+      "component": "Hiwire",
+      "revision": "6a1e67280a15d929ebeceee54a6358c9c8d5f697",
+      "url": "https://github.com/pyodide/hiwire/tree/6a1e67280a15d929ebeceee54a6358c9c8d5f697",
+      "availability": "immutable commit"
+    },
+    {
+      "component": "XZ/liblzma",
+      "revision": "v5.2.2 / 9815cdf6987ef91a85493bfcfd1ce2aaf3b47a0a",
+      "url": "https://github.com/tukaani-project/xz/tree/9815cdf6987ef91a85493bfcfd1ce2aaf3b47a0a",
+      "availability": "annotated tag resolved to immutable commit; no upstream archive digest retained"
+    },
+    {
+      "component": "zstd",
+      "revision": "zstd-1.5.7 / eef946ae8cf1591c0e5cc5f43486210768647c2e",
+      "url": "https://github.com/python/cpython-source-deps/tree/eef946ae8cf1591c0e5cc5f43486210768647c2e",
+      "availability": "immutable tag commit; no upstream archive digest retained"
+    },
+    {
+      "component": "SQLite",
+      "revision": "3.39.0 / sqlite-autoconf-3390000",
+      "url": "https://www.sqlite.org/2022/sqlite-autoconf-3390000.tar.gz",
+      "availability": "official versioned source URL; the separate copyright notice is an unversioned 2026-11-14 page snapshot bound by SHA-256; no local source-bundle digest claimed"
+    },
+    {
+      "component": "ws Node-only dependency",
+      "revision": "8.18.3",
+      "url": "https://github.com/websockets/ws/tree/8.18.3",
+      "availability": "version tag; lock-resolved integrity and exact MIT notice retained"
+    }
+  ],
+  "emscriptenPorts": {
+    "bzip2": {
+      "version": "1.0.6",
+      "portRecipeUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/tools/ports/bzip2.py",
+      "portRecipeBytes": 1214,
+      "portRecipeSha256": "8202632f46e4315ac192ac65cf2c536d181cccba365bfa6ae65715bada2d581b",
+      "sourceUrl": "https://github.com/emscripten-ports/bzip2/archive/1.0.6.zip",
+      "sourceUrlKind": "version tag; tag-to-commit not retained",
+      "recipeDeclaredSha512": "512cbfde5144067f677496452f3335e9368fd5d7564899cb49e77847b9ae7dca598218276637cbf5ec524523be1e8ace4ad36a148ef7f4badf3f6d5a002a4bb2",
+      "licensePath": "LICENSES/bzip2-LICENSE.txt",
+      "licenseSha256": "4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204",
+      "sourceArchiveStatus": "version and recipe-declared SHA-512 recorded; archive not downloaded or locally hashed"
+    },
+    "zlib": {
+      "version": "1.3.1",
+      "portRecipeUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/tools/ports/zlib.py",
+      "portRecipeBytes": 1506,
+      "portRecipeSha256": "d3d8ca9a7caac82fa68e4984e47c03386093b8fa2b068e8e9eccedd3aa406926",
+      "sourceUrl": "https://github.com/madler/zlib/archive/refs/tags/v1.3.1.tar.gz",
+      "sourceUrlKind": "version tag; tag-to-commit not retained",
+      "recipeDeclaredSha512": "8c9642495bafd6fad4ab9fb67f09b268c69ff9af0f4f20cf15dfc18852ff1f312bd8ca41de761b3f8d8e90e77d79f2ccacd3d4c5b19e475ecf09d021fdfe9088",
+      "licensePath": "LICENSES/zlib-LICENSE.txt",
+      "licenseSha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+      "sourceArchiveStatus": "version and recipe-declared SHA-512 recorded; archive not downloaded or locally hashed"
+    }
+  },
+  "toolchain": {
+    "emsdk": {
+      "tag": "5.0.3",
+      "commit": "a620cf1d71c62dfdfbb0c01fe0a371e2af2dda6c",
+      "sourceUrl": "https://github.com/emscripten-core/emsdk/tree/5.0.3",
+      "licenseUrl": "https://raw.githubusercontent.com/emscripten-core/emsdk/5.0.3/LICENSE",
+      "sourceUrlKind": "version tag; resolved commit recorded",
+      "licenseUrlKind": "version tag; resolved commit recorded",
+      "licensePath": "LICENSES/emsdk-LICENSE.txt",
+      "licenseBytes": 1326,
+      "licenseSha256": "99d9a9616fbde3f5ee22a71d8645799a8522d48526130c5ba6dc27ad15ce01f1"
+    },
+    "emscripten": {
+      "tag": "5.0.3",
+      "commit": "285c424dfa9e83b03cf8490c65ceadb7c45f28eb",
+      "sourceUrl": "https://github.com/emscripten-core/emscripten/tree/285c424dfa9e83b03cf8490c65ceadb7c45f28eb",
+      "licenseUrl": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/LICENSE",
+      "licensePath": "LICENSES/emscripten-LICENSE.txt",
+      "licenseBytes": 5093,
+      "licenseSha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    "releaseMapping": {
+      "commit": "065bfade0ee2c02138b83cb10049d8be95e146b6",
+      "url": "https://raw.githubusercontent.com/emscripten-core/emsdk/5.0.3/emscripten-releases-tags.json",
+      "sha256": "826d54172211eb776af19f548f07d9f970c0e10d1648c586aa5dbcecead38ce6",
+      "urlKind": "version tag; retained mapping commit is recorded separately"
+    },
+    "emsdkManifest": {
+      "url": "https://raw.githubusercontent.com/emscripten-core/emsdk/5.0.3/emsdk_manifest.json",
+      "sha256": "7a7201711bd5311a17d95a3cf97329ebc5bebe35d36ab4657631a5c74662c188",
+      "urlKind": "version tag; resolved emsdk commit recorded separately"
+    },
+    "deps": {
+      "url": "https://chromium.googlesource.com/emscripten-releases/+/065bfade0ee2c02138b83cb10049d8be95e146b6/DEPS?format=TEXT",
+      "sha256": "e640bfc521cf6a0289fe00d097da15d9e3b8b241d59e9252e2303688ecbcc4e7",
+      "binaryenCommit": "2eb472cd650b183ffe0f88b0365908d0aa669ea3",
+      "llvmCommit": "e5927fecf8a6ce89e1a4eac5b828e7d42676452a",
+      "buildOnlyInputs": {
+        "v8Commit": "433b2912c5cb94ed0979c8284e96e4d08416b620",
+        "llvmTestSuiteCommit": "a71e64de9e47b70f5b841341f9df2f4f18d46785",
+        "ninjaCipd": "version:2@1.12.1.chromium.4"
+      }
+    },
+    "licenseReceipts": [
+      {
+        "component": "LLVM",
+        "license": "Apache-2.0 with LLVM exceptions",
+        "path": "LICENSES/llvm-LICENSE.TXT",
+        "url": "https://raw.githubusercontent.com/llvm/llvm-project/e5927fecf8a6ce89e1a4eac5b828e7d42676452a/LICENSE.TXT",
+        "bytes": 15141,
+        "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "Binaryen",
+        "license": "Apache-2.0",
+        "path": "LICENSES/binaryen-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/WebAssembly/binaryen/2eb472cd650b183ffe0f88b0365908d0aa669ea3/LICENSE",
+        "bytes": 11535,
+        "sha256": "64c0d02491e16eced74826440ecd2bcf7722d37fa586faf457b2494293afbffe",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "Emscripten musl",
+        "license": "MIT with BSD-licensed TRE portion",
+        "path": "LICENSES/emscripten-musl-COPYRIGHT.txt",
+        "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libc/musl/COPYRIGHT",
+        "bytes": 6204,
+        "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "Emscripten libc++",
+        "license": "LLVM libc++ terms",
+        "path": "LICENSES/libcxx-LICENSE.TXT",
+        "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libcxx/LICENSE.TXT",
+        "bytes": 16703,
+        "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "Emscripten libc++abi",
+        "license": "LLVM libc++abi terms",
+        "path": "LICENSES/libcxxabi-LICENSE.TXT",
+        "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libcxxabi/LICENSE.TXT",
+        "bytes": 16706,
+        "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "Emscripten libunwind",
+        "license": "LLVM libunwind terms",
+        "path": "LICENSES/libunwind-LICENSE.TXT",
+        "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/285c424dfa9e83b03cf8490c65ceadb7c45f28eb/system/lib/libunwind/LICENSE.TXT",
+        "bytes": 16706,
+        "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "HACL*",
+        "license": "Apache-2.0 upstream",
+        "path": "LICENSES/hacl-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/hacl-star/hacl-star/8ba599b2f6c9701b3dc961db895b0856a2210f76/LICENSE",
+        "bytes": 11356,
+        "sha256": "c5accbbd8546e94c34aed24afe689a617627d18eed5a6c48277e48db57c23851",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "HACL* generated source header",
+        "license": "MIT file-level notice",
+        "path": "LICENSES/hacl-generated-source-header.txt",
+        "url": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/_hacl/Hacl_HMAC.c",
+        "bytes": 1209,
+        "sha256": "c3f0fcd0a458caf768ac60c9b999c9b01dd9d25c98720be67f87fa96a0aa1c95",
+        "textIncludedInFixture": true,
+        "textBasis": "exact first 25 source lines containing the file-level notice"
+      },
+      {
+        "component": "libmpdec README",
+        "license": "source inventory and author context",
+        "path": "LICENSES/libmpdec-README.txt",
+        "url": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/_decimal/libmpdec/README.txt",
+        "bytes": 3642,
+        "sha256": "89926cd0fe6cfb33a2b5b7416c101e9b5d42b0d639d348e0871acf6ffc8258a3",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "libmpdec source header",
+        "license": "BSD-style file-level notice",
+        "path": "LICENSES/libmpdec-source-header.txt",
+        "url": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/_decimal/libmpdec/mpdecimal.c",
+        "bytes": 1361,
+        "sha256": "eb4d2509b268bf38286ce7e8f09d757f62d66d513ae15d486fc4c7df03c52704",
+        "textIncludedInFixture": true,
+        "textBasis": "exact first 28 source lines containing the file-level notice"
+      },
+      {
+        "component": "Expat",
+        "license": "MIT",
+        "path": "LICENSES/expat-COPYING.txt",
+        "url": "https://raw.githubusercontent.com/python/cpython/df793163d5821791d4e7caf88885a2c11a107986/Modules/expat/COPYING",
+        "bytes": 1144,
+        "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "libffi",
+        "license": "MIT",
+        "path": "LICENSES/libffi-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/libffi/libffi/f08493d249d2067c8b3207ba46693dd858f95db3/LICENSE",
+        "bytes": 1132,
+        "sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "Hiwire",
+        "license": "MPL-2.0",
+        "path": "LICENSES/hiwire-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/pyodide/hiwire/6a1e67280a15d929ebeceee54a6358c9c8d5f697/LICENSE",
+        "bytes": 16725,
+        "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "XZ/liblzma",
+        "license": "public-domain liblzma statement",
+        "path": "LICENSES/xz-COPYING.txt",
+        "url": "https://raw.githubusercontent.com/tukaani-project/xz/v5.2.2/COPYING",
+        "bytes": 2774,
+        "sha256": "c4f8e14fafe458d84808a4cd8b69f94673ebe2bf8fc992291629a69ac12218f8",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "zstd",
+        "license": "BSD",
+        "path": "LICENSES/zstd-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/python/cpython-source-deps/zstd-1.5.7/LICENSE",
+        "bytes": 1549,
+        "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+        "textIncludedInFixture": true
+      },
+      {
+        "component": "SQLite",
+        "license": "public domain for deliverable SQLite code/documentation",
+        "path": "LICENSES/sqlite-copyright.html.txt",
+        "url": "https://www.sqlite.org/copyright.html",
+        "bytes": 8351,
+        "sha256": "44ca9f793055c8e32fc65f65a4f5bcf813a33f5bdaaa084067dd617a4ed3cc70",
+        "textIncludedInFixture": true,
+        "textBasis": "exact raw official copyright page"
+      }
+    ]
+  },
+  "stdlibAttribution": {
+    "zipEntries": 614,
+    "regularFiles": 567,
+    "pyodideOwnedRegularFiles": 26,
+    "cpythonDerivedRegularFiles": 541,
+    "markerBearingRegularFiles": 133,
+    "directPinnedCpythonLibPaths": 132,
+    "generatedSysconfigdataFiles": 1,
+    "cpythonRevision": "df793163d5821791d4e7caf88885a2c11a107986",
+    "memberForm": {
+      "directories": 47,
+      "extensions": {
+        ".py": 559,
+        ".txt": 1,
+        ".ini": 2,
+        ".typed": 2,
+        ".ctypes": 1,
+        "<none>": 1,
+        ".bat": 1
+      },
+      "pycMembers": 0,
+      "basis": "exact retained python_stdlib.zip member names and bytes"
+    },
+    "scanBasis": {
+      "scope": "mapped source-member text for the 567 regular members",
+      "markerFamilies": ["copyright", "license", "SPDX", "PSF", "BSD", "CNRI", "Secret Labs", "Zope", "CWI", "Apache", "MIT", "BeOpen", "py2app"],
+      "familyCountsOverlap": true,
+      "sourceMapping": "132 direct CPython Lib paths plus one generated sysconfigdata output",
+      "independentLegalClassification": false
+    },
+    "classification": "aggregate source attribution, not a legal classifier"
+  },
+  "buildClosure": {
+    "attributionStatus": "conservative candidate closure from pinned recipes and link flags",
+    "provenActualWasmLinkMembership": "not decomposed by a retained linker map",
+    "recipeBackedComponents": [
+      "CPython",
+      "HACL*",
+      "libmpdec",
+      "Expat",
+      "libffi",
+      "Hiwire",
+      "Emscripten bzip2 port 1.0.6",
+      "Emscripten zlib port 1.3.1",
+      "XZ/liblzma",
+      "zstd",
+      "SQLite",
+      "Emscripten",
+      "LLVM",
+      "Binaryen",
+      "musl",
+      "libc++",
+      "libc++abi",
+      "libunwind"
+    ],
+    "namedSystemInputsNotIndependentlyDecomposed": [
+      "libstdc++",
+      "libGL",
+      "EGL/WebGL/HTML5/SDL",
+      "worker/websocket support",
+      "libjsverror"
+    ],
+    "namedSystemInputStatus": "unresolved: no per-input source identity or separate notice mapping is asserted in this fixture",
+    "buildOnlyInputs": ["V8", "LLVM test suite", "Ninja"],
+    "interpretation": "Named system inputs are recorded as open source-bundle obligations; no notice coverage or final-Wasm membership is asserted for them, and the list is not exhaustive."
+  },
+  "jsDependencyInventory": {
+    "basis": "pinned Pyodide src/js package manifest and lock plus literal import-string scan of the exact retained .mjs members",
+    "sourceManifest": {
+      "url": "https://raw.githubusercontent.com/pyodide/pyodide/f37a18559ae11c5f371beb1c9462a13a663fc461/src/js/package.json",
+      "bytes": 2999,
+      "sha256": "cf0265c994f7de049944185538891e5d5c362ebef249e08b145ce64c3a562dd6"
+    },
+    "sourceLock": {
+      "url": "https://raw.githubusercontent.com/pyodide/pyodide/f37a18559ae11c5f371beb1c9462a13a663fc461/src/js/package-lock.json",
+      "bytes": 227310,
+      "sha256": "f48deeea360eab531d13340167166cba19dfd434af15603b73671673423a36f4",
+      "lockfileVersion": 3,
+      "packageRecords": 504
+    },
+    "directRuntimeDependencies": [
+      {
+        "name": "@types/emscripten",
+        "range": "^1.41.4",
+        "resolvedVersion": "1.41.4",
+        "role": "type-only; not emitted browser runtime code",
+        "license": "MIT",
+        "distributionStatus": "not distributed in the five-file browser payload; no license body carried",
+        "lockIntegrity": "sha512-ECf0qTibhAi2Z0K6FIY96CvBTVkVIuVunOfbTUgbaAmGmbwsc33dbK9KZPROWsmzHotddy6C5pIqYqOmsBoJEw=="
+      },
+      {
+        "name": "ws",
+        "range": "^8.5.0",
+        "resolvedVersion": "8.18.3",
+        "role": "Node-only branch; browser map disables it",
+        "license": "MIT",
+        "resolved": "https://registry.npmjs.org/ws/-/ws-8.18.3.tgz",
+        "lockIntegrity": "sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==",
+        "licensePath": "LICENSES/ws-LICENSE.txt",
+        "licenseSha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef"
+      }
+    ],
+    "browserRuntimeScan": {
+      "members": [
+        {
+          "member": "pyodide/pyodide.mjs",
+          "sha256": "1bb8cc14f9405aaa7cd4e00c12edd0a8539de9cc026618d6ee5a9663f367dc70",
+          "externalStaticImports": [],
+          "externalDynamicImports": [],
+          "nodeOnlyDynamicImports": ["node:url", "node:fs", "node:fs/promises", "node:vm", "node:path", "node:crypto", "ws", "node:child_process"],
+          "bundledSourceIdentifiers": ["StackFrame", "ErrorStackParser"]
+        },
+        {
+          "member": "pyodide/pyodide.asm.mjs",
+          "sha256": "22514b8be6980e28a02c8b1d6387ce8dfe666fc4edf8d547cff5dce29ff4d972",
+          "externalStaticImports": [],
+          "externalDynamicImports": [],
+          "nodeOnlyDynamicImports": ["node:module", "node:net", "node:tls", "node:stream", "node:url", "node:fs", "node:fs/promises", "node:path", "node:vm", "node:crypto", "ws", "node:child_process"],
+          "bundledSourceIdentifiers": ["StackFrame", "ErrorStackParser"]
+        }
+      ],
+      "vendorSource": {
+        "sourceUrl": "https://github.com/pyodide/pyodide/tree/f37a18559ae11c5f371beb1c9462a13a663fc461/src/js/vendor/stackframe",
+        "licensePath": "LICENSES/pyodide-stackframe-LICENSE.txt",
+        "licenseSha256": "899da9d991cb211a3642b84e82a9ae0b4b4e44546fd207e34d7d4ec2eb40f420",
+        "sourceFiles": [
+          {"path": "error-stack-parser.ts", "bytes": 4899, "sha256": "06cb52d1e4ae6a0f9c3f349ba4751b1839dfe7a3515f74373f0a7fab62c52b8d"},
+          {"path": "stackframe.ts", "bytes": 5635, "sha256": "f1ac1bce24f9a936957975f6205cf49337c46f6b32591e807f168ca377b392a4"}
+        ]
+      },
+      "status": "browser import surface inspected; Node-only package branch and dev lock closure are not part of the five-file browser payload, and no claim is made for unexamined package payloads"
+    }
+  },
+  "packageScope": {
+    "lockRecords": 357,
+    "packageRecords": 346,
+    "sharedLibraryRecords": 11,
+    "payloadsIncluded": false,
+    "packageNoticeReview": "deferred to a separately selected package profile"
+  },
+  "sourceBundlePolicy": {
+    "emscriptenPortArchives": "bzip2 1.0.6 and zlib 1.3.1 recipe-declared SHA-512 values are recorded; archives are not included or locally hashed",
+    "xzZstdSqliteUpstreamDigests": "not published in retained upstream metadata",
+    "localArchiveDigests": "not claimed until exact source bytes are assembled",
+    "immutableSourceUrlsOrCommits": false,
+    "sourceIdentityPolicy": "mixed: immutable commits where recorded, version tags or versioned official URLs where retained, and one unversioned SQLite copyright-page snapshot bound by retrieval date and SHA-256",
+    "noPrivatePaths": true,
+    "noLegalSufficiencyClaim": true,
+    "noHostedQualificationClaim": true
+  }
+}

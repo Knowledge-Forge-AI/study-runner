@@ -1,5 +1,22 @@
 Study Runner Notice
 
-Copyright (c) Samuel Leighton Lair and contributors.
+Study Runner is stewarded by Samuel Leighton Lair.
 
-Project-authored material is available under AGPL-3.0-or-later unless otherwise stated. See LICENSE and COMMERCIAL-LICENSE.md. Third-party materials retain their own terms.
+Copyright (c) Samuel Leighton Lair and Study Runner contributors.
+
+Study Runner-authored source, publication tooling, templates, verification
+code, and documentation are licensed under the GNU Affero General Public
+License v3.0 or later unless a file states otherwise. See LICENSE.
+
+Commercial licenses for Study Runner-authored material are available for
+separate proprietary terms. See COMMERCIAL-LICENSE.md. Commercial licensing
+contact: sam.lair@knowledge-forge.ai.
+
+Pyodide, CPython, the Python standard library, Emscripten, and all other
+third-party or separately maintained material remain under the licenses,
+copyright notices, source offers, and other terms of their authoritative
+upstream sources. The five-file runtime closure and its current notice index
+are under runtime/SOURCE-AVAILABILITY.json and runtime/THIRD_PARTY_NOTICES.txt.
+Those files are not a claim of complete notice clearance; the retained notice
+review verdict is ACCEPT-STUDY-RUNNER-CORE-NOTICES for the notice/source unit
+only, not release, legal, hosted, or browser qualification.

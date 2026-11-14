@@ -1,0 +1,18 @@
+{
+  "name": "@knowledge-forge-ai/study-runner",
+  "version": "0.1.0-prep.3",
+  "private": true,
+  "description": "Pinned static runner source preparation; not yet a public repository or release.",
+  "license": "AGPL-3.0-or-later",
+  "author": "Samuel Leighton Lair <sam.lair@knowledge-forge.ai>",
+  "type": "module",
+  "engines": {
+    "node": "22.23.4"
+  },
+  "scripts": {
+    "build:static-runner": "node tools/build-public-runner.mjs"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  }
+}

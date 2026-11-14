@@ -1,0 +1,40 @@
+name: Publish study runner Pages artifact
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: study-runner-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Require exact repository and main branch
+        run: |
+          test "${GITHUB_REPOSITORY}" = "Knowledge-Forge-AI/study-runner"
+          test "${GITHUB_REF}" = "refs/heads/main"
+          test "${GITHUB_EVENT_NAME}" = "workflow_dispatch"
+      - name: Verify committed dist hashes
+        run: node tools/verify-dist-hashes.mjs
+      - name: Verify static artifact
+        run: node tools/verify-static-policy.mjs
+      - name: Upload static artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: dist
+      - name: Deploy Pages artifact
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

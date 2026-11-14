@@ -1,0 +1,160 @@
+Study runner five-core third-party notices
+===========================================
+
+Scope
+-----
+
+This notice index describes the Pyodide 314.0.8 browser subset consisting of
+`pyodide.mjs`, `pyodide.asm.mjs`, `pyodide.asm.wasm`, `python_stdlib.zip`, and
+`pyodide-lock.json`. It does not include package payloads named by the lock
+metadata, the Node/CLI files, or any unrelated application dependency.
+
+The exact pinned upstream license, copyright, and source-header texts included
+under `LICENSES/` are:
+
+* Pyodide MPL-2.0; CPython PSF-2.0, the pinned `Doc/license.rst`
+  incorporated-software acknowledgements, and README attribution context.
+* Emscripten, emsdk, LLVM, Binaryen, musl, libc++, libc++abi, and libunwind
+  license/copyright texts, plus the Emscripten bzip2 and zlib port licenses.
+* HACL* Apache-2.0 license plus the generated-file MIT source header.
+* libmpdec README context plus its BSD-style source header.
+* Expat MIT, libffi MIT, Hiwire MPL-2.0, XZ/liblzma `COPYING`, zstd BSD, and
+  SQLite's official public-domain copyright page.
+* The Pyodide-vendored stackframe/error-stack-parser MIT notice and the
+  Node-only `ws` 8.18.3 MIT notice used by the package's Node branch.
+
+The source URLs, exact byte counts, and SHA-256 receipts for every included
+text are in `SOURCE-AVAILABILITY.json`. The two source-header files are exact
+prefixes containing the notices from the pinned CPython source files; their
+full source-file URLs and full-source receipts are recorded in the manifest.
+
+Proven asset identity
+---------------------
+
+The five members are from Pyodide 314.0.8, release commit
+`f37a18559ae11c5f371beb1c9462a13a663fc461`. The member hashes in
+`SOURCE-AVAILABILITY.json` bind the candidate assets. This is source and
+artifact provenance; it is not by itself a browser, hosted-deployment, or
+legal-release qualification.
+
+Candidate build closure and attribution boundary
+------------------------------------------------
+
+The conservative candidate build closure is derived from the pinned Pyodide
+and CPython build recipes and includes CPython, HACL*, libmpdec, Expat,
+libffi, Hiwire, XZ/liblzma, zstd, SQLite, Emscripten bzip2, Emscripten zlib,
+Emscripten, LLVM, Binaryen, musl, libc++, libc++abi, and libunwind. The pinned
+link configuration also names `libstdc++`, GL/EGL/WebGL/HTML5/SDL libraries,
+worker/websocket support, and `libjsverror`. Those named inputs remain
+unresolved in this fixture: there is no per-input source identity or separate
+notice mapping for them, and they are open source-bundle obligations rather
+than claims of coverage.
+
+The exact contribution of each named system library to this particular Wasm
+file was not decomposed by a linker map in this preparation. This notice
+therefore must not be read as claiming that every conservative candidate is
+proven present, or that the list is an exhaustive binary-composition proof.
+Conversely, the absence of a component from the five-file archive does not
+erase its source/notice obligation if the final link uses it.
+
+V8, the LLVM test suite, and Ninja are recorded separately as build/test
+provenance. They are not asserted to be runtime members of the five-file
+browser subset.
+
+Notice summary
+--------------
+
+* Pyodide: MPL-2.0; retain the complete text in `LICENSES/` and the pinned
+  source offer in `SOURCE-AVAILABILITY.json`.
+* CPython and its bundled standard library: retain the PSF License Version 2,
+  CPython historical attribution, the exact pinned `Doc/license.rst` text,
+  the exact `ctypes/macholib/README.ctypes` py2app MIT/PSF notice, and each
+  bundled file's own notice where it differs. `Doc/license.rst`
+  explicitly calls its incorporated-software list incomplete; it is included
+  as the upstream notice source, not as a claim that every source notice is
+  classified. The retained marker scan identifies PSF, BSD, CNRI, Secret Labs,
+  Zope, CWI, Apache, MIT, BeOpen, and py2app references; these observations
+  overlap and are not a legal classifier.
+* HACL*: preserve generated file-level MIT notices and the pinned upstream
+  Apache-2.0 source/license receipt.
+* Emscripten bzip2 port: preserve the pinned 1.0.6 port license and its
+  recipe-declared source SHA-512; the archive itself is not present here.
+* Emscripten zlib port: preserve the pinned 1.3.1 zlib license and its
+  recipe-declared source SHA-512; the archive itself is not present here.
+* libmpdec: preserve its BSD-style source header and provenance.
+* Expat and libffi: preserve their MIT license receipts.
+* Hiwire: preserve its MPL-2.0 license receipt.
+* XZ/liblzma: preserve the versioned source and `COPYING` receipt; the
+  upstream source identifies liblzma as public domain.
+* zstd: preserve its versioned source and BSD license receipt.
+* SQLite: preserve the versioned source and the official public-domain
+  copyright statement for the deliverable code/documentation. The retained
+  upstream HTML bytes are stored as `LICENSES/sqlite-copyright.html.txt` and
+  must be served or downloaded as plaintext, never as active HTML.
+* Emscripten, emsdk, LLVM, Binaryen, musl, libc++, libc++abi, and libunwind:
+  preserve the pinned source revisions and license receipts listed in the
+  manifest. The manifest distinguishes full license texts from exact
+  source-header prefixes and binds each included byte sequence.
+* Pyodide JavaScript: the pinned source manifest identifies the vendored
+  stackframe/error-stack-parser source and its MIT notice, and the Node-only
+  `ws` dependency and its exact 8.18.3 lock receipt. The browser export has no
+  external static or dynamic package import; the two retained `.mjs` members
+  still contain bundled vendored code and Node-only branches. No package
+  payloads or the 504-record development lock closure are distributed here.
+
+Source and digest policy
+------------------------
+
+`SOURCE-AVAILABILITY.json` distinguishes commit-pinned URLs, tag URLs,
+versioned official URLs, and the one unversioned SQLite copyright-page
+snapshot. The SQLite page bytes were retrieved on 2026-11-14 and are bound by
+the recorded SHA-256; its page says it was last updated on 2026-01-12, so it
+is not an immutable source URL. The Emscripten bzip2 1.0.6 and zlib 1.3.1
+port recipes provide source URLs and recipe-declared SHA-512 values; their
+source archives are not present here. XZ 5.2.2, zstd 1.5.7, and SQLite 3.39.0
+have source identities but no upstream archive digest in the retained
+metadata. No local archive digest is claimed for those sources until their
+exact bytes are assembled into a source bundle; a future intake must compute
+and retain local SHA-256 receipts.
+
+The lock file is metadata only. Its 346 package and 11 shared-library records
+do not mean that those payloads or their notices are distributed here. A
+package-enabled profile requires a separate payload, license, notice, and
+source review.
+
+The stock Python 3.14.2 metadata observation advertises `_bz2`, `zlib`,
+`_lzma`, `_zstd`, `_sqlite3`, `pyexpat`, `_ctypes`, `_decimal`, `_blake2`,
+`_hmac`, `_md5`, `_sha1`, `_sha2`, and `_sha3`. The bzip2 and zlib entries are
+covered here by the pinned Emscripten port recipes and exact license texts;
+the metadata declaration is not treated as a complete linker-membership proof.
+
+Stdlib member form and scan basis
+---------------------------------
+
+The retained `python_stdlib.zip` has 614 entries: 47 directories and 567
+regular source/data files. Its regular members are 559 `.py`, one `.txt`, two
+`.ini`, two `.typed`, one `.ctypes`, one extensionless file, and one `.bat`;
+there are no `.pyc` members in this retained asset. The 133 marker-bearing
+count is a bounded scan observation over the mapped source-member text using
+selected copyright/license/SPDX marker families (the family counts overlap),
+with 132 direct pinned CPython `Lib/` paths and one generated sysconfigdata
+output. It is not a legal classifier and does not imply that the ZIP preserves
+every source-tree notice omitted by the packaging filter.
+
+JavaScript dependency inventory boundary
+-----------------------------------------
+
+The pinned `src/js/package.json` and `package-lock.json` receipts identify
+`@types/emscripten` as type-only and `ws` 8.18.3 (MIT) as the only direct
+runtime package dependency. The package's browser map disables `ws` and the
+Node builtins. A literal import scan of the exact retained browser members
+finds no external browser static or dynamic package import; `pyodide.mjs`
+contains Node-only imports (`node:url`, `node:fs`, `node:fs/promises`,
+`node:vm`, `node:path`, `node:crypto`, `ws`, `node:child_process`), while
+`pyodide.asm.mjs` also contains Node-only glue imports. The emitted browser
+member contains the pinned vendored stackframe/error-stack-parser source, whose
+MIT notice is included. Development-only lock records and any package
+payloads are outside this five-file notice set; no claim is made for them.
+
+No legal sufficiency, public-release approval, complete linker attribution,
+package closure, or hosted-origin qualification is claimed by this fixture.
