@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { lstat, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { extname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readTypeScriptAssets, typescriptAssets } from "./typescript-asset.mjs";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const outputRoot = join(root, "dist");
@@ -68,6 +69,7 @@ const expected = new Map([
   ["/SOURCE-AVAILABILITY.json", "SOURCE-AVAILABILITY.json"],
   ["/LICENSE", "LICENSE"],
   ["/NOTICE", "NOTICE"],
+  ...typescriptAssets.map(({ route }) => [route, route.slice(1)]),
 ]);
 const licenseNames = (await readdir(join(outputRoot, "LICENSES"))).sort();
 const expectedLicenseBodyCount = binding.noticeReview?.licenseBodyCount;
@@ -85,6 +87,8 @@ for (const [route, relative] of expected) {
   routeFacts[route] = { status: 200, methodModel: ["GET", "HEAD"], path: `/${relative}`, ...factsForRoute };
 }
 const unknownRoute = { status: 404, methodModel: ["GET", "HEAD"], path: "/__study_runner_unknown__" };
+await readTypeScriptAssets(root);
+const optionalCompiler = await readTypeScriptAssets(root, true);
 
 function requireByteEquality(label, left, right) {
   if (!left.equals(right)) fail(label);
@@ -167,6 +171,7 @@ const publicSnapshotFiles = [
   "runtime/source/separate-origin-runtime-host.ts",
   "runtime/source/public-runner-contract.ts",
   "tools/build-public-runner.mjs",
+  "tools/typescript-asset.mjs",
   "tools/test-host6-classic-runner.mjs",
   "tools/test-host8-negative-controls.mjs",
   "tools/verify-dist-hashes.mjs",
@@ -309,6 +314,9 @@ const receipt = {
   outputFileCount: outputFiles.length,
   routeCount: expected.size,
   licenseBodyCount: licenseNames.length,
+  optionalTypeScriptCompiler: optionalCompiler.map(({ asset }) => ({
+    route: asset.route, bytes: asset.bytes, sha256: asset.sha256,
+  })),
   routeModel: { simulatedStaticDispatch: true, get: 200, head: 200, unknownRoute: 404, routes: routeFacts, unknown: unknownRoute },
   mimeModel: { source: "extension mapping only; server MIME headers untested", checked: true },
   frameCsp: { checked: true, value: requiredCsp, frameAncestors: "not claimed" },
@@ -320,7 +328,7 @@ const receipt = {
     notice: { rootBytes: rootNoticeBytes.byteLength, rootSha256: digest(rootNoticeBytes), servedBytes: servedNoticeBytes.byteLength, servedSha256: digest(servedNoticeBytes), byteEqual: true },
     index: { rootBytes: rootIndexBytes.byteLength, rootSha256: digest(rootIndexBytes), servedBytes: servedIndexBytes.byteLength, servedSha256: digest(servedIndexBytes), byteEqual: true },
   },
-  privacy: { checked: true, scannedAuthoredFiles: authoredPrivacyFiles, scannedServedFiles: servedPrivacyFiles, publicSnapshotFiles, excludedVendorAssets: ["pyodide/*", "LICENSES/*"], matches: privacyMatches, publicSnapshotMatches: publicSnapshotPrivacyMatches, assetOnlyNoAuth: true, parentState: "cross-origin parent-owned; not in public bundle" },
+  privacy: { checked: true, scannedAuthoredFiles: authoredPrivacyFiles, scannedServedFiles: servedPrivacyFiles, publicSnapshotFiles, excludedVendorAssets: ["pyodide/*", "LICENSES/*", ...typescriptAssets.map(({ route }) => route.slice(1))], matches: privacyMatches, publicSnapshotMatches: publicSnapshotPrivacyMatches, assetOnlyNoAuth: true, parentState: "cross-origin parent-owned; not in public bundle" },
   governance: { checked: true, scannedFiles: governancePaths, scannedServedFiles: servedGovernancePaths, businessContact: "sam.lair@knowledge-forge.ai", privateContactPresent: false, noticeReviewStaleText: false },
   network: { checked: true, fetchCalls, allowedFetch: ["same-origin lockUrl with credentials omit"], forbiddenApis: forbiddenNetworkApis, absoluteRuntimeUrls: absoluteRuntimeUrls },
   integrity: { checked: true, inputManifest: { bytes: inputFacts.bytes, sha256: inputFacts.sha256 }, coreSource: { bytes: binding.emitter.coreFixture.bytes, sha256: binding.emitter.coreFixture.sha256 }, finalBundle: { bytes: finalBundle.byteLength, sha256: finalBundleHash, sri: finalBundleSri, coreSubstringExact: true }, coreAssetsBound: true, licenseReferencesBound: namedLicenseRefs.size, synchronousAdmission: true },

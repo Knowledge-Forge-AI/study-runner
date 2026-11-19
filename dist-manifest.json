@@ -2,8 +2,8 @@
   "schema": "study-runner-dist-manifest.v1",
   "source": "runtime-inputs.json",
   "outputRoot": "dist",
-  "outputFileCount": 39,
-  "routeCount": 40,
+  "outputFileCount": 42,
+  "routeCount": 43,
   "routes": [
     "/",
     "/index.html",
@@ -18,6 +18,9 @@
     "/SOURCE-AVAILABILITY.json",
     "/LICENSE",
     "/NOTICE",
+    "/assets/typescript-5.9.3.js",
+    "/assets/typescript-5.9.3-LICENSE.txt",
+    "/assets/typescript-5.9.3-ThirdPartyNoticeText.txt",
     "/LICENSES/*"
   ],
   "files": {
@@ -148,6 +151,18 @@
     "/assets/study-runtime-frame.js": {
       "bytes": 23307,
       "sha256": "9fe6ef2c73632ad47bfe78382f9e83f34b444f3c3c462a1627525a8590c6b1c8"
+    },
+    "/assets/typescript-5.9.3-LICENSE.txt": {
+      "bytes": 9197,
+      "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+    },
+    "/assets/typescript-5.9.3-ThirdPartyNoticeText.txt": {
+      "bytes": 37824,
+      "sha256": "1af3c68039c57e539422da82a4faada506ce6d0ea6f90e0b699d02dbcdb7a90c"
+    },
+    "/assets/typescript-5.9.3.js": {
+      "bytes": 9112572,
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
     },
     "/frame.html": {
       "bytes": 488,

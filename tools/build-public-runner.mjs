@@ -10,6 +10,7 @@ import {
 } from "node:fs/promises";
 import { basename, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { readTypeScriptAssets } from "./typescript-asset.mjs";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const runtimeRoot = join(root, "runtime");
@@ -96,6 +97,7 @@ if (!EXPECTED_FRAME_TEMPLATE_SHA256 || !EXPECTED_CORE_SHA256 || !EXPECTED_ADMISS
 const workflowFacts = await assertHash(workflowPath, inputBinding.workflowSha256, "WORKFLOW");
 const installedTypescript = JSON.parse(await readFile(join(root, "node_modules", "typescript", "package.json"), "utf8"));
 if (installedTypescript.version !== EXPECTED_TYPESCRIPT) throw new Error(`TYPESCRIPT_VERSION_MISMATCH:${installedTypescript.version}`);
+const optionalCompiler = await readTypeScriptAssets(root);
 
 await rm(buildRoot, { recursive: true, force: true });
 await rm(outputRoot, { recursive: true, force: true });
@@ -185,10 +187,13 @@ await copyFile(join(runtimeRoot, "SOURCE-AVAILABILITY.json"), join(outputRoot, "
 await copyFile(join(root, "LICENSE"), join(outputRoot, "LICENSE"));
 await copyFile(join(root, "NOTICE"), join(outputRoot, "NOTICE"));
 await copyTree(licenseSource, join(outputRoot, "LICENSES"));
+for (const { asset, body } of optionalCompiler) {
+  await writeFile(join(outputRoot, asset.route.slice(1)), body, { mode: 0o644 });
+}
 
 const licenseNames = (await readdir(licenseSource)).sort();
 const outputFiles = await sortedFiles(outputRoot);
-if (outputFiles.length !== 39) throw new Error(`OUTPUT_COUNT:${outputFiles.length}`);
+if (outputFiles.length !== 39 + optionalCompiler.length) throw new Error(`OUTPUT_COUNT:${outputFiles.length}`);
 const outputFacts = {};
 for (const relative of outputFiles) outputFacts[`/${relative}`] = await facts(join(outputRoot, relative));
 if (outputFacts["/assets/study-runtime-frame.js"].sha256 !== finalBundleFacts.sha256) throw new Error("OUTPUT_BUNDLE_HASH_MISMATCH");
@@ -228,6 +233,7 @@ const manifest = {
     "/SOURCE-AVAILABILITY.json": { output: "/SOURCE-AVAILABILITY.json", ...sourceAvailabilityFacts },
     "/LICENSE": { output: "/LICENSE", ...publicLicenseFacts },
     "/NOTICE": { output: "/NOTICE", ...publicNoticeFacts },
+    ...Object.fromEntries(optionalCompiler.map(({ asset }) => [asset.route, { output: asset.route, ...outputFacts[asset.route] }])),
     "/LICENSES/*": { outputDirectory: "/LICENSES", files: Object.fromEntries((await readdir(licenseSource)).sort().map((name) => [name, outputFacts[`/LICENSES/${name}`]])) },
   },
   notices: { review: NOTICE_REVIEW, notice: { path: "runtime/THIRD_PARTY_NOTICES.txt", ...noticeFacts }, sourceAvailability: { path: "runtime/SOURCE-AVAILABILITY.json", ...sourceAvailabilityFacts }, publicLicense: { path: "LICENSE", ...publicLicenseFacts }, publicNotice: { path: "NOTICE", ...publicNoticeFacts }, licenseBodies: Object.fromEntries((await readdir(licenseSource)).sort().map((name) => [name, outputFacts[`/LICENSES/${name}`]])) },
