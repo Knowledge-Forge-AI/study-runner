@@ -35,6 +35,27 @@ and verifier are run. The workflow is manual-only.
 
 ## Build prerequisites
 
+### Optional browser compiler assets
+
+The source includes three unmodified files from the locked [TypeScript 5.9.3 npm archive](https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz).
+The compiler is an explicit opt-in asset for compatible lesson consumers.
+The runner frame continues to accept JavaScript and Python. The static build
+and verifier bind the three files by byte count and SHA-256:
+
+- [TypeScript compiler](dist/assets/typescript-5.9.3.js)
+- [Apache 2.0 license](dist/assets/typescript-5.9.3-LICENSE.txt)
+- [Third-party notices](dist/assets/typescript-5.9.3-ThirdPartyNoticeText.txt)
+
+The [upstream source commit for v5.9.3](https://github.com/microsoft/TypeScript/tree/c63de15a992d37f0d6cec03ac7631872838602cb)
+is the provenance reference. The archive matches the study-components lockfile
+integrity
+`sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==`.
+The checked-in browser compiler is separate from the pinned TypeScript tool
+used to build the runner. Hosts must verify JavaScript MIME, compression, and
+CORS at the compiler URL before enabling a lesson consumer.
+
+### Runner build toolchain
+
 The public source tree intentionally does not include `node_modules`, `.build`,
 or compiler binaries. `tools/build-public-runner.mjs` performs no package
 installation and no network access; a maintainer must provide the pinned
